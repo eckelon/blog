@@ -60,6 +60,10 @@ module.exports = {
                             dev
                         }
                     }
+                },
+                {
+                    test: /\.md$/,
+                    loader: 'frontmatter-markdown-loader'
                 }
             ]
         },
