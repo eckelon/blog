@@ -1,0 +1,12 @@
+---
+layout: post
+comments: true
+title: ¿Pero esto qué es?
+slug: 2017-01-14-pero-esto-que-es
+---
+
+Después de 2 años intentando hacer algo con mi blog, he decidido hacer un _restart_. La línea de blog que tenía hace unos años ya no se parece demasiado a lo que me apetece hacer, de modo que he decidido _pausar_ el RVMI, para comenzar un nuevo blog, quizás más técnico. Sobretodo, mi problema es que gestionar casi 10 años de entradas es muy complicado, y además, mis inquietudes de los 18 tienen poco que ver con la de casi los 30 :)
+
+![from the begining]({{ site.url }}/assets/images/begin.jpg){: .center-image}
+
+Veremos en qué acaba todo esto.
