@@ -1,4 +1,6 @@
 <script>
+	import config from '../config.js';
+	const { siteUrl } = config;
 	export let segment;
 </script>
 
@@ -52,5 +54,6 @@
 	<ul>
 		<li><a class:selected='{segment === undefined}' href='.'>Sobre mi</a></li>
 		<li><a rel=prefetch class:selected='{segment === "blog"}' href='blog'>blog</a></li>
+		<li><a rel=prefetch class:selected='{segment === "rss"}' href='rss'>rss</a></li>
 	</ul>
 </nav>

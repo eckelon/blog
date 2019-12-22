@@ -1,8 +1,10 @@
 'use strict';
 
+const isDev = process.env.NODE_ENV === 'development';
+
 export default {
-    siteUrl: 'http://localhost:3000',
-    blogUrl: 'http://localhost:3000/blog',
+    siteUrl: isDev ? 'http://localhost:3000' : 'https://vibrant-almeida-56d6d4.netlify.com',
+    blogUrl: isDev ? 'http://localhost:3000/blog' : 'https://vibrant-almeida-56d6d4.netlify.com/blog',
     blogTitle: 'Blog de JA Samitier',
     author: 'JA Samitier',
     email: 'contacto [at] jasamitier [.] com',
