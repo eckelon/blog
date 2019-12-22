@@ -1,6 +1,9 @@
 <script context="module">
+    import { singleton } from 'sanctuary';
     export function preload({ params, query }) {
-	return this.fetch('blog.json').then(r => r.json()).then(posts => ({ posts }));
+        return this.fetch('blog.json')
+            .then(r => r.json())
+            .then(singleton('posts'));
     }
 </script>
 
@@ -11,9 +14,9 @@
 </script>
 
 <style>
-    ul {
-        margin: 0 0 1em 0;
-        line-height: 1.5;
+    .post {
+        border-bottom: 1px solid black;
+        padding: 1rem 0;
     }
 </style>
 
@@ -21,14 +24,14 @@
     <title>{blogTitle}</title>
 </svelte:head>
 
-<h1>Entradas</h1>
+<h1>{blogTitle}</h1>
 
-<ul>
+<div class="blog">
     {#each posts as post}
-        <!-- we're using the non-standard `rel=prefetch` attribute to
-                tell Sapper to load the data for the page as soon as
-                the user hovers over the link or taps it, instead of
-                waiting for the 'click' event -->
-        <li><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></li>
+        <div class="post">
+            <h2><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></h2>
+            {@html post.html}
+            Publicado el {post.date} por {post.author}
+        </div>
     {/each}
-</ul>
+</div>
