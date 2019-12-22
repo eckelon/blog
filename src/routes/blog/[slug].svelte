@@ -14,6 +14,7 @@
 </script>
 
 <script>
+    import PostFooter from '../../components/PostFooter.svelte';
     export let post;
 </script>
 
@@ -61,4 +62,5 @@
 
 <div class='content'>
     {@html post.html}
+    <PostFooter date={post.date} author={post.author}/>
 </div>

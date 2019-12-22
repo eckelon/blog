@@ -8,6 +8,7 @@
 </script>
 
 <script>
+    import PostFooter from '../../components/PostFooter.svelte';
     export let posts;
     import config from '../../config.js';
     const { blogTitle } = config;
@@ -16,7 +17,7 @@
 <style>
     .post {
         border-bottom: 1px solid black;
-        padding: 1rem 0;
+        padding: 2.5rem 0;
     }
 </style>
 
@@ -31,7 +32,7 @@
         <div class="post">
             <h2><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></h2>
             {@html post.html}
-            Publicado el {post.date} por {post.author}
+            <PostFooter date={post.date} author={post.author}/>
         </div>
     {/each}
 </div>
