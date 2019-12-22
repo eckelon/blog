@@ -4,7 +4,6 @@ comments: true
 title: Docker en proyectos Java (I). Cómo desplegar una aplicación Java en tomcat usando Docker
 category: desarrollo
 tags: [desarrollo, docker, tomcat, java]
-slug: 2017-01-15-tomcat-y-docker
 ---
 
 De todas las cosas que aprendí en 2016, la que más ha cambiado mi día a día ha sido Docker y, sobretodo, la capacidad orquestación con Docker Compose. La orquestación de máquinas es algo que ya me llamó la atención durante mi paso por [Senpai Devs](http://senpaidevs.com), cuando [Néstor](http://nestorsalceda.com) nos enseñaba las _virguerías_ que era capaz de hacer para montar diferentes entornos. Esta pretende ser la primera de las entradas sobre cómo monté mi entorno de desarrollo (Java EE + Elastic + Apache + tomcat + SQL Server) completamente sobre Docker. Empezaremos por tomcat.

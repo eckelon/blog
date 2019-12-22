@@ -3,7 +3,6 @@ layout: post
 title: Resumen de 2016 y propósitos para 2017
 category: personal
 tags: resumen 2016 2017 propositos
-slug: 2017-01-17-resumen-de-2016-y-propositos-para-2017
 ---
 
 Otro año se va y otro post en Internet que habla sobre propósitos. 2016 ha sido un año en el que principalmente he seguido desarrollando mis conocimientos técnicos. He atendido a bastantes eventos (o _saraos_ como diría [Dani](http://danilat.com)) como el [SOSZ16](http://sosz16.cachirulovalley.com) o el [Codemotion](https://2016.codemotion.es) e ¡incluso he sido ponente en el [Congreso Web](http://congresoweb.es/jesus-angel-samitier/)!

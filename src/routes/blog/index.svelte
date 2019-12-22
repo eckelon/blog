@@ -6,6 +6,8 @@
 
 <script>
     export let posts;
+    import config from '../../config.js';
+    const { blogTitle } = config;
 </script>
 
 <style>
@@ -16,10 +18,10 @@
 </style>
 
 <svelte:head>
-    <title>Blog</title>
+    <title>{blogTitle}</title>
 </svelte:head>
 
-<h1>Recent posts</h1>
+<h1>Entradas</h1>
 
 <ul>
     {#each posts as post}

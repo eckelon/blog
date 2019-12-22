@@ -1,13 +1,12 @@
-import { formatPost } from './_posts';
+import { getPost } from './_posts';
 
 export function get(req, res, next) {
   // the `slug` parameter is available because
   // this file is called [slug].json.js
   const { slug } = req.params;
-  const raw = require(`./_content/${slug}.md`);
+  const post = getPost(`${slug}.md`);
 
-  if (raw) {
-    const post = formatPost(raw);
+  if (post) {
     res.writeHead(200, {
       'Content-Type': 'application/json'
     });

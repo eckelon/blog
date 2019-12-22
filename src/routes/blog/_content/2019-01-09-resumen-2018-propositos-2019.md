@@ -4,7 +4,6 @@ comments: true
 title: Resumen de mi 2018 y propósitos para 2019
 category: personal
 tags: trabajo personal propositos resumen
-slug: 2019-01-09-resumen-2018-propositos-2019
 ---
 
 2018 ha sido una auténtica locura tanto en lo personal como en lo profesional, y no quería dejar escapar la oportunidad de escribir algo cortito por aquí a modo de resumen.

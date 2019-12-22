@@ -3,7 +3,6 @@ layout: post
 title: Algunos trucos git en la terminal
 category: tips
 tags: trabajo terminal desarrollo zsh ohmyzsh git
-slug: 2017-01-25-algunos-trucos-git-terminal
 ---
 
 El otro día enseñé a [Jorge](http://jorgeatgu.com) un par de funciones de mi [`.zshrc`](https://github.com/eckelon/dotfiles/blob/master/zshrc) que me facilitan la vida gestionando repositorios git desde la terminal y le gustaron bastante. He pensado que igual también resultan interesantes por aquí.

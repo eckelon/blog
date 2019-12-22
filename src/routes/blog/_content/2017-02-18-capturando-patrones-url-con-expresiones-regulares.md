@@ -4,7 +4,6 @@ comments: true
 title: Capturando URLs mediante expresiones regulares fáciles
 category: howto
 tags: trabajo desarrollo regexp expresionesregulares
-slug: 2017-02-18-capturando-patrones-url-con-expresiones-regulares
 ---
 
 Esta semana, hemos migrado un proyecto bastante grande a _https_. Es un proyecto implantado en varios países, de modo que tenemos que gestionar bastantes traducciones. En esta entrada me gustaría contar la forma que se me ocurrió para modificar todas las URLs contenidas en los textos de las traducciones para cambiarles el _http_ por el _https_. Normalmente, con redirigir las peticiones _http_ a _https_ bastaría, pero como en muchas páginas y comunicaciones para los usuarios se pintan estas urls con el protocolo, necesitábamos cambiarlo ahí también.
