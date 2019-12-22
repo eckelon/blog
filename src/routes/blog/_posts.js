@@ -24,7 +24,7 @@ const getPostSlug = pipe([
 const formatPost = (name) => ({ attributes: { title, slug, date, author }, html }) => ({
   title,
   html,
-  author: postAuthor || author,
+  author: author || postAuthor,
   slug: slug || getPostSlug(name),
   date: date || getPostDate(name)
 });
