@@ -53,7 +53,7 @@
 <nav>
 	<ul>
 		<li><a class:selected='{segment === undefined}' href='.'>Sobre mi</a></li>
-		<li><a rel=prefetch class:selected='{segment === "blog"}' href='blog'>blog</a></li>
-		<li><a rel=prefetch class:selected='{segment === "rss"}' href='rss'>rss</a></li>
+		<li><a rel=prefetch class:selected='{segment === "blog"}' href='blog'>Blog</a></li>
+		<li><a rel=prefetch class:selected='{segment === "rss"}' href='rss'>Rss</a></li>
 	</ul>
 </nav>
