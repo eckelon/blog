@@ -1,5 +1,16 @@
+<script context="module">
+    let content;
+
+    const updateContent = (c) => { content = c };
+    export function preload({ params, query }) {
+        return this.fetch('index.json')
+        .then((r) => r.json())
+        .then(updateContent);
+    }
+</script>
+
 <style>
-    h1, figure, p {
+    h1, figure {
         margin: 0 auto;
     }
 
@@ -21,10 +32,6 @@
         margin: 0 0 1em 0;
     }
 
-    p {
-        margin: 1em auto;
-    }
-
     @media (min-width: 480px) {
         h1 {
             font-size: 2.5em;
@@ -41,8 +48,7 @@
     <img alt='JA (el autor) en la playa de Gijón' src='main_guetzli.jpg'>
 </figure>
 
-<h1 id="soy-jesús-ángel-samitier">Soy JA Samitier</h1>
+<h1 id="soy-jesús-ángel-samitier">{content.title}</h1>
+{@html content.html}
 
-<p>
-    Me encanta ser desarrollador de sofware; mi trabajo me permite hacer cosas gigantescas usando simplemente un portátil en cualquier parte del mundo.</p><p>Personalmente no diferencio el trabajo en <em>front-end</em> y el <em>back-end</em>: en ambos me siento cómodo, aunque últimamente me apasiona hacer front-end reactivo usando tecnologías como <a href="https://angularjs.org">Angular JS</a>, <a href="https://github.com/riot/riot">Riot.js</a> y sobretodo <a href="https://github.com/reactivex/rxjs">RxJs</a>. En el <em>back</em> me he pegado mucho con Java y PHP, y recientemente también he hecho cositas en Python usando <a href="https://github.com/pallets/flask">Flask</a>.
-</p>
+

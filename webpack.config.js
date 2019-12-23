@@ -1,19 +1,19 @@
 const webpack = require('webpack');
-const path = require('path');
-const config = require('sapper/config/webpack.js');
+const { resolve } = require('path');
+const { server, client, serviceworker } = require('sapper/config/webpack.js');
 const pkg = require('./package.json');
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 
-const alias = { svelte: path.resolve('node_modules', 'svelte') };
+const alias = { svelte: resolve('node_modules', 'svelte') };
 const extensions = ['.mjs', '.js', '.json', '.svelte', '.html'];
 const mainFields = ['svelte', 'module', 'browser', 'main'];
 
 module.exports = {
     client: {
-        entry: config.client.entry(),
-        output: config.client.output(),
+        entry: client.entry(),
+        output: client.output(),
         resolve: { alias, extensions, mainFields },
         module: {
             rules: [
@@ -43,8 +43,8 @@ module.exports = {
     },
 
     server: {
-        entry: config.server.entry(),
-        output: config.server.output(),
+        entry: server.entry(),
+        output: server.output(),
         target: 'node',
         resolve: { alias, extensions, mainFields },
         externals: Object.keys(pkg.dependencies).concat('encoding'),
@@ -74,8 +74,8 @@ module.exports = {
     },
 
     serviceworker: {
-        entry: config.serviceworker.entry(),
-        output: config.serviceworker.output(),
+        entry: serviceworker.entry(),
+        output: serviceworker.output(),
         mode: process.env.NODE_ENV
     }
 };
