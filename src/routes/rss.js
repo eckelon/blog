@@ -14,7 +14,7 @@ const renderFeed = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
         <link>${blogUrl}/${slug}</link>
         <guid isPermaLink="false">${blogUrl}/${slug}</guid>
               <description><![CDATA[${description || ''}]]></description>
-              <pubDate>${ date ? new Date(date).toUTCString() : ''}</pubDate>
+              <pubDate>${ date || ''}</pubDate>
               <content:encoded><![CDATA[${html || ''}]]></content:encoded>
           </item>
       `).join('\n')}
