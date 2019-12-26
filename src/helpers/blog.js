@@ -1,9 +1,18 @@
 'use strict';
 
-import { head, chain, map, pipe, maybeToNullable, splitOn, take, joinWith, parseDate } from 'sanctuary';
+import { getFiles, isMarkdown } from './utils';
+import { compose, head, chain, map, pipe, maybeToNullable, splitOn, take, joinWith, parseDate, filter, sort, reverse } from 'sanctuary';
 
 import config from '../config';
 const { author: postAuthor } = config;
+
+const findPosts = pipe([
+    filter(isMarkdown),
+    sort,
+    reverse
+]);
+
+const posts = compose(findPosts)(getFiles);
 
 const formatDate = (date) => `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 
@@ -31,4 +40,4 @@ const formatPost = (name) => ({ attributes: { title, slug, date, author }, html 
 });
 
 
-export { formatPost, formatDate, getPostDate, getPostSlug };
+export { posts, formatPost, formatDate, getPostDate, getPostSlug };

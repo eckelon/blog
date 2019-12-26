@@ -1,10 +1,12 @@
+import { compose, fromEither } from 'sanctuary';
+
 import { getPost } from './_posts';
 
 export function get(req, res, next) {
   // the `slug` parameter is available because
   // this file is called [slug].json.js
   const { slug } = req.params;
-  const post = getPost(`${slug}.md`);
+  const post = compose(fromEither(undefined))(getPost)(`${slug}.md`);
 
   if (post) {
     res.writeHead(200, {

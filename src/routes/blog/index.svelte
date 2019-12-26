@@ -1,7 +1,7 @@
 <script context="module">
     import { singleton } from 'sanctuary';
-    export function preload({ params, query }) {
-        return this.fetch('blog.json')
+    export function preload({ params, query: { page } }) {
+        return this.fetch(`blog.json?page=${page || 1}`)
             .then(r => r.json())
             .then(singleton('posts'));
     }

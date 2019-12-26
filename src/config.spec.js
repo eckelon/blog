@@ -11,7 +11,7 @@ describe('test development configs', () => {
         restore = mockedEnv({ NODE_ENV: 'development' });
     });
 
-    test('shoud get valid urls', () => {
+    it('shoud get valid urls', () => {
 
         const { default: { siteUrl, blogUrl } } = require('./config');
         expect(siteUrl).toBe('http://localhost:3000');
@@ -32,7 +32,7 @@ describe('test production configs', () => {
         restore = mockedEnv({ NODE_ENV: 'production' });
     });
 
-    test('shoud get valid urls', () => {
+    it('shoud get valid urls', () => {
 
         const { default: { siteUrl, blogUrl } } = require('./config');
 

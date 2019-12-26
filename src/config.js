@@ -8,6 +8,7 @@ export default {
     blogTitle: 'Blog de JA Samitier',
     author: 'JA Samitier',
     email: 'contacto [at] jasamitier [.] com',
+    pageSize: 4,
     social: {
         twitter: 'https://twitter.com/eckelon',
         github: 'https://github.com/eckelon',
