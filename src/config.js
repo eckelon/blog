@@ -1,5 +1,8 @@
 'use strict';
 
+import { resolve } from 'path';
+
+const contentDir = resolve('./src/routes/blog/_content');
 const isDev = process.env.NODE_ENV === 'development';
 
 export default {
@@ -8,6 +11,7 @@ export default {
     blogTitle: 'Blog de JA Samitier',
     author: 'JA Samitier',
     email: 'contacto [at] jasamitier [.] com',
+    contentDir,
     pageSize: 4,
     social: {
         twitter: 'https://twitter.com/eckelon',
