@@ -1,7 +1,7 @@
 'use strict';
 
 import { getFiles, isMarkdown } from './utils';
-import { compose, head, chain, map, pipe, maybeToNullable, splitOn, take, joinWith, parseDate, filter, sort, reverse, ifElse, gte, flip as C, ap as S, encase, drop, size, Just, rights } from 'sanctuary';
+import { compose, head, chain, map, pipe, maybeToNullable, splitOn, take, joinWith, parseDate, filter, sort, reverse, ifElse, gte, flip as C, ap as S, encase, drop, size, Just, rights, div, range, add } from 'sanctuary';
 
 import config from '../config';
 const { author: postAuthor, pageSize, contentDir } = config;
@@ -34,12 +34,6 @@ const formatPost = (name) => ({ attributes: { title, slug, date, author }, html 
 
 const takeUpTo = (x) => ifElse (compose(gte(x))(size)) (take(x)) (Just);
 
-const paginate = C(({ page, pageSize }) => pipe([
-    drop((page - 1) * pageSize),
-    chain(takeUpTo(pageSize)),
-    maybeToNullable
-]));
-
 const insert = (field) => (object) => (value) => ({ ...object, [field]: value });
 
 const getRawPost = encase((name) => require(`../routes/blog/_content/${name}`));
@@ -53,7 +47,15 @@ const findPosts = pipe([
 
 const getPosts = compose(findPosts)(getFiles);
 const posts = getPosts(contentDir);
+
 const getAllPosts = () => compose(rights)(map(getPost))(posts);
+const getTotalPages = () => pipe([size, div(pageSize), Math.ceil, range(0), map(add(1))])(posts);
+
+const paginate = C(({ page, pageSize }) => pipe([
+    drop((page - 1) * pageSize),
+    chain(takeUpTo(pageSize)),
+    maybeToNullable
+]));
 
 const getPage =  pipe([
   insert('page')({ pageSize }),
@@ -62,4 +64,4 @@ const getPage =  pipe([
   rights
 ]);
 
-export { getPage, getAllPosts, getPost };
+export { getPage, getTotalPages, getAllPosts, getPost };

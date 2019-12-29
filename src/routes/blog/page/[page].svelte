@@ -1,18 +1,19 @@
 <script context="module">
-    export function preload({ params, query }) {
-        return this.fetch(`blog.json`)
-            .then(r => r.json());
+    export function preload({ params: { page }, query }) {
+        return this.fetch(`blog.json?page=${page}`)
+            .then(r => r.json())
+            .then(json => ({...json, page}));
     }
 </script>
 
 <script>
+    export let page;
     export let posts;
     export let totalPages;
 
-    import PostFooter from '../../components/PostFooter.svelte';
-    import Paginator from '../../components/Paginator.svelte';
-
-    import config from '../../config.js';
+    import PostFooter from '../../../components/PostFooter.svelte';
+    import Paginator from '../../../components/Paginator.svelte';
+    import config from '../../../config.js';
     const { blogUrl, blogTitle } = config;
 </script>
 
@@ -27,7 +28,7 @@
     <title>{blogTitle}</title>
 </svelte:head>
 
-<h1>{blogTitle}</h1>
+<h1>{blogTitle} - Página {page}</h1>
 
 <div class="blog">
     {#each posts as post}

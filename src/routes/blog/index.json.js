@@ -1,12 +1,15 @@
-import { getPage } from '../../helpers/blog';
+import { getPage, getTotalPages } from '../../helpers/blog';
 
 export function get({ query: { page } }, res) {
 
-    const pageContent = getPage(page);
+    const info = {
+        posts: getPage(page || 1),
+        totalPages: getTotalPages()
+    };
 
     res.writeHead(200, {
         'Content-Type': 'application/json'
     });
 
-    res.end(JSON.stringify(pageContent));
+    res.end(JSON.stringify(info));
 }

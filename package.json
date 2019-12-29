@@ -1,13 +1,13 @@
 {
   "name": "blog-de-ja",
   "description": "Blog de JA",
-  "version": "0.0.1",
+  "version": "0.5.0",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build",
     "export": "sapper export",
     "start": "node __sapper__/build",
-    "test": "NODE_ENV=development jest --coverage"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "compression": "^1.7.1",
