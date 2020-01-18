@@ -1,0 +1,26 @@
+image: node:12-slim
+stages:
+  - deploy
+
+before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - 'which rsync || ( apt-get update -y && apt-get install rsync -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - npm install
+
+deploy_prod:
+    stage: deploy
+    script:
+        - npm run build
+        - rsync -az --delete -e "ssh" ./ $SSH_USER@$SSH_ENDPOINT:$SSH_DIR/
+    environment:
+        name: production
+        url: https://eckelon.net
+    when: on_success
+    only:
+        - master

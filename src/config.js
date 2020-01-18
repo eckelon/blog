@@ -6,8 +6,8 @@ const contentDir = resolve('./src/routes/blog/_content');
 const isDev = process.env.NODE_ENV === 'development';
 
 export default {
-    siteUrl: isDev ? 'http://localhost:3000' : 'https://vibrant-almeida-56d6d4.netlify.com',
-    blogUrl: isDev ? 'http://localhost:3000/blog' : 'https://vibrant-almeida-56d6d4.netlify.com/blog',
+    siteUrl: isDev ? 'http://localhost:3000' : 'https://eckelon.net',
+    blogUrl: isDev ? 'http://localhost:3000/blog' : 'https://eckelon.net/blog',
     blogTitle: 'Blog de JA Samitier',
     author: 'JA Samitier',
     email: 'contacto [at] jasamitier [.] com',
