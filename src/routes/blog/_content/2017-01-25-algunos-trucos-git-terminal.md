@@ -7,9 +7,7 @@ tags: trabajo terminal desarrollo zsh ohmyzsh git
 
 El otro día enseñé a [Jorge](http://jorgeatgu.com) un par de funciones de mi [`.zshrc`](https://github.com/eckelon/dotfiles/blob/master/zshrc) que me facilitan la vida gestionando repositorios git desde la terminal y le gustaron bastante. He pensado que igual también resultan interesantes por aquí.
 
-![imagen teclado]({{ site. url }}/assets/images/2017-01-22-como-uso-la-terminal_guetzli.jpg){: .center-image}
-
-- __Cómo generar un `.gitignore` automáticamente__
+- **Cómo generar un `.gitignore` automáticamente**
 
 ```
 function gi() {
@@ -19,7 +17,7 @@ function gi() {
 
 de esta forma se puede ejecutar `gi vagrant java intelliJ` para descargar el .gitignore resultado de esa búsqueda en [Gitignore.io](http://gitignore.io)
 
-- __Cómo listar todos los repositorios (con sus respectivas ramas actuales) presentes en un directorio__
+- **Cómo listar todos los repositorios (con sus respectivas ramas actuales) presentes en un directorio**
 
 ```
 
@@ -61,7 +59,7 @@ vim-strip-trailing-whitespaces -> master ✔
 
 Requisito: la función `git_prompt_info` del [plugin git](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh) de ohmyzsh
 
-- __Cómo hacer `git pull` a sus ramas actuales en todos los repositorios dentro de un directorio__
+- **Cómo hacer `git pull` a sus ramas actuales en todos los repositorios dentro de un directorio**
 
 ```
 function gupd() {
@@ -77,6 +75,7 @@ function gupd() {
     done
 }
 ```
+
 Por lo mismo que he contado en el punto anterior, a veces necesito bajarme los cambios de unos cuantos repositorios, para lo cual esta función me resulta muy cómoda. Además de listar los repositorios, también los actualiza. Evidentemente para poder hacer esto no puedo tener cambios sin commitear en ninguno de los repositorios.
 
 Requisito: las funciones `git_current_branch` y `git_prompt_info` del [plugin git](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh) de ohmyzsh

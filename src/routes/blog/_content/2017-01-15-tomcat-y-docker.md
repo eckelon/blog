@@ -8,11 +8,9 @@ tags: [desarrollo, docker, tomcat, java]
 
 De todas las cosas que aprendí en 2016, la que más ha cambiado mi día a día ha sido Docker y, sobretodo, la capacidad orquestación con Docker Compose. La orquestación de máquinas es algo que ya me llamó la atención durante mi paso por [Senpai Devs](http://senpaidevs.com), cuando [Néstor](http://nestorsalceda.com) nos enseñaba las _virguerías_ que era capaz de hacer para montar diferentes entornos. Esta pretende ser la primera de las entradas sobre cómo monté mi entorno de desarrollo (Java EE + Elastic + Apache + tomcat + SQL Server) completamente sobre Docker. Empezaremos por tomcat.
 
-![Docker]({{ site.url }}/assets/images/docker.svg)
-
 [Apache tomcat](http://tomcat.apache.org) es el contenedor de _servlets_ mas común a la hora de desplegar aplicaciones Java. Es ligero, no demasiado complejo de configurar y está delante de una comunidad enorme de desarrolladores. Además es software libre, lo cual también es importante.
 
-Antes de empezar la fiesta, hay que tener claro que no estamos levantando máquinas, sino aplicaciones. Si necesitamos levantar 3 aplicaciones java, entonces levantaremos tres tomcats, cada uno en su propio contenedor, con su propia configuración etc. Si una aplicación falla, paramos __esa__ aplicación, dejando las demás funcionando. Es por esto que vamos a usar Docker Compose. Para una sola aplicación no sería necesario, ya que con un `docker run` podríamos tenerla levantada con un comando, pero la idea de esta serie de entradas es mostrar cómo levanto todo mi entorno de desarrollo, para lo cual si es necesaria la orquestación.
+Antes de empezar la fiesta, hay que tener claro que no estamos levantando máquinas, sino aplicaciones. Si necesitamos levantar 3 aplicaciones java, entonces levantaremos tres tomcats, cada uno en su propio contenedor, con su propia configuración etc. Si una aplicación falla, paramos **esa** aplicación, dejando las demás funcionando. Es por esto que vamos a usar Docker Compose. Para una sola aplicación no sería necesario, ya que con un `docker run` podríamos tenerla levantada con un comando, pero la idea de esta serie de entradas es mostrar cómo levanto todo mi entorno de desarrollo, para lo cual si es necesaria la orquestación.
 
 Esto es lo que vamos a hacer:
 
