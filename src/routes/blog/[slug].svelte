@@ -52,6 +52,11 @@
     .content :global(li) {
         margin: 0 0 0.5em 0;
     }
+
+    .content :global(span.image-credit) {
+        font-size: 10px;
+        text-align: right;
+    }
 </style>
 
 <svelte:head>
