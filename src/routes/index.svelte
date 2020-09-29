@@ -1,4 +1,4 @@
-<script context="module">
+ <script context="module">
     let content;
 
     const updateContent = (c) => { content = c };

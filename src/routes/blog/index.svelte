@@ -9,7 +9,6 @@
     export let posts;
     export let totalPages;
 
-    import PostFooter from '../../components/PostFooter.svelte';
     import Paginator from '../../components/Paginator.svelte';
 
     import config from '../../config.js';
@@ -17,10 +16,6 @@
 </script>
 
 <style>
-    .post {
-        border-bottom: 1px solid black;
-        padding: 2.5rem 0;
-    }
 </style>
 
 <svelte:head>
@@ -31,11 +26,9 @@
 
 <div class="blog">
     {#each posts as post}
-        <div class="post">
-            <h2><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></h2>
-            {@html post.html}
-            <PostFooter date={post.date} author={post.author}/>
-        </div>
+        <ul>
+            <li> <a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></li>
+        </ul>
     {/each}
     <Paginator url={blogUrl} totalPages={totalPages} />
 </div>

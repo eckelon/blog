@@ -17,11 +17,13 @@
 </style>
 
 <div class="blog-paginator">
-	{#each totalPages as page}
-		{#if page === 1}
-			<div class="page-number"><a href="{url}">{page}</a></div>
-		{:else}
-			<div class="page-number"><a href="{url}/page/{page}">{page}</a></div>
-		{/if}
-	{/each}
+	{#if totalPages.length > 1}
+		{#each totalPages as page}
+			{#if page === 1}
+				<div class="page-number"><a href="{url}">{page}</a></div>
+			{:else}
+				<div class="page-number"><a href="{url}/page/{page}">{page}</a></div>
+			{/if}
+		{/each}
+	{/if}
 </div>
